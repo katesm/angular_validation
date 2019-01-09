@@ -1,0 +1,14 @@
+<div class="form-group has-feedback" [ngClass]="{ 'has-success' : control.valid && control.dirty, 'has-error' : inError()}">
+
+  <ng-content></ng-content>
+
+  <i class="form-control-feedback glyphicon" [ngClass]="{'glyphicon-ok' : control.valid && control.dirty, 'glyphicon-remove' : inError() }"></i>
+
+  <small *ngIf="vError('required')" class="help-block text-danger">
+    Required
+  </small>
+  <small *ngIf="vError()" class="help-block text-danger">
+    {{ valdationMessage }}
+  </small>
+
+</div>
